@@ -4,18 +4,24 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/dreamsofcode-io/ui/spinner"
+	"github.com/dreamsofcode-io/ui/progress"
 )
 
 func main() {
+	bar := progress.NewBar()
+
 	fmt.Println("Starting...")
 
-	s := spinner.New(spinner.WithFrames(spinner.FramesDots))
-	s.Start()
+	bar.Start()
 
-	time.Sleep(time.Second * 3)
+	const steps = 10
+	for i := range steps {
+		progress := 1.0 / float64(steps) * float64(i+1)
+		bar.SetProgress(progress)
+		time.Sleep(time.Millisecond * 500)
+	}
 
-	s.Stop()
+	bar.Stop()
 
 	fmt.Println("Finished!")
 }
