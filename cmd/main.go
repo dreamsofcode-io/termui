@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/dreamsofcode-io/ui/progress"
+	"github.com/dreamsofcode-io/termui/progress"
 )
 
 func main() {

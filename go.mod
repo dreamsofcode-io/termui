@@ -1,4 +1,4 @@
-module github.com/dreamsofcode-io/ui
+module github.com/dreamsofcode-io/termui
 
 go 1.24.1
 
